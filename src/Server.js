@@ -1,10 +1,14 @@
 // Import the Express module
 const express = require('express');
 const path = require('path');
+require('dotenv').config() // .evn
+
 // Create an instance of an Express application
 const app = express();
 // Define the port number where the server will listen for requests
-const port = 3000;
+const port = process.env.PORT || 8888 ;  // 8888: nếu undefined server sẽ ko die
+const hostname = process.env.HOST_NAME;
+
 
 // config template engine
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +28,6 @@ app.get('/abc', (req, res) => {
 
 // Start the server and have it listen on the specified port
 // When the server starts, log a message indicating that it is running
-app.listen(port, () => {
+app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`);
 });
