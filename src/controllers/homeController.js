@@ -35,14 +35,16 @@ const postCreateUser =  async (req, res) => {
       );
       console.log(">>> Check Result :" ,results);
       res.send('Create user successfully')
-
-
-
     // const [results , fields] = await connection.query('SELECT * FROM Users u');
+}
+
+const getUpdatePage = (req, res) => {
+    res.render("edit.ejs")
+
 }
 
 
 
 module.exports = {
-    getHomepage , getABC , postCreateUser ,getCreatePage
+    getHomepage , getABC , postCreateUser ,getCreatePage , getUpdatePage
 }
