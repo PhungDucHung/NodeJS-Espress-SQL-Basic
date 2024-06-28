@@ -10,8 +10,20 @@ const getABC = (req, res) => {
 }
  
 const postCreateUser = (req, res) => {
-    console.log(">>> req.body", req.body)
-    res.send('create user')
+    let email = req.body.email;
+    let myName = req.body.name;
+    let city = req.body.city;
+    // let {email, myName, city} = req.body
+
+    connection.query(
+        `INSERT INTO Users (email , name , city )
+        VALUES (?, ?, ?)`,
+        [email , myName , city],
+        function (err, results) {
+          console.log(results);
+          res.end('Create user successfully')
+        }
+      );
 }
 
 module.exports = {
