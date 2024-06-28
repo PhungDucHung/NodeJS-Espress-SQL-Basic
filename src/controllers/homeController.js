@@ -9,6 +9,11 @@ const getABC = (req, res) => {
     res.render("sample.ejs")
 }
  
+const postCreateUser = (req, res) => {
+    console.log(">>> req.body", req.body)
+    res.send('create user')
+}
+
 module.exports = {
-    getHomepage , getABC
+    getHomepage , getABC , postCreateUser
 }
