@@ -8,7 +8,7 @@ router.get('/abc', getABC);
 // Corrected the route for getCreatePage
 router.get('/create', getCreatePage);
 
-router.get('/update', getUpdatePage);
+router.get('/update/:id', getUpdatePage);
 
 
 // Corrected the route for postCreateUser

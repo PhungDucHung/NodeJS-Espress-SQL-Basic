@@ -39,8 +39,9 @@ const postCreateUser =  async (req, res) => {
 }
 
 const getUpdatePage = (req, res) => {
+    const userId = req.params.id;
+    console.log(">>> req.params.id: " , req.params , userId);
     res.render("edit.ejs")
-
 }
 
 
