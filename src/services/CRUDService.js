@@ -21,6 +21,12 @@ const updateUserById = async(email , myName , city , userId) => {
   );
 }
 
+const deleteUserById = async(id) => {
+    let [results,fields] = await  connection.query(  // truyền động giá trị
+        `DELETE FROM users WHERE id=?`,[id],
+      );
+}
+
 module.exports = {
-    getAllUsers , getUserById , updateUserById
+    getAllUsers , getUserById , updateUserById , deleteUserById
 }

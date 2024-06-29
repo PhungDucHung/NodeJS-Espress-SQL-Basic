@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getHomepage, getABC, postCreateUser, getCreatePage, getUpdatePage , postUpdateUser } = require('../controllers/homeController');
+const { getHomepage, getABC, postCreateUser, getCreatePage, getUpdatePage , postUpdateUser , postDeleteUser ,postHandleRemoveUser} = require('../controllers/homeController');
 
 router.get('/', getHomepage);
 router.get('/abc', getABC);
@@ -14,5 +14,8 @@ router.post('/update-user', postUpdateUser);
 
 // Corrected the route for postCreateUser
 router.post('/create-user', postCreateUser);
+
+router.post('/delete-user/:id', postDeleteUser);
+router.post('/delete-user', postHandleRemoveUser);
 
 module.exports = router;
